@@ -30,8 +30,9 @@ public class Customer {
 		 * TODO 3		10 Marks
 		 * Provide suitable specification for statement method 
 		 * 
-		 * The statement method will Extract Method, Renaming, Move Method and Replace Temp With Query. We end up with better code that enable us to easily add the implementation for a HTML statement.
-         * It will calculate total amount of movies Regular, NewRelease, Childrens.
+		 * The statement method going to calculate total amount of movies with perspective of Regular, NewRelease, Childrens.
+		 *  The statement method in refactoring stage will Extract Method, Renaming, Move Method and Replace Temp With Query. We end up with better code that enable us to easily add the implementation for a HTML statement.
+         * 
          * Three cases created using amountFor method (RegularPrice, NewReleasePrice and Childrens Price) all extending an abstract Price class. Movie uses this class and the charge calculation is moved to it. Then, you can start to override the implementation of this calculation. The same is done with the frequent renter points calculation.
 		 * 
 		 */
