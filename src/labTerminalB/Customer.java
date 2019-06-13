@@ -29,6 +29,8 @@ public class Customer {
 		/**
 		 * TODO 3		10 Marks
 		 * Provide suitable specification for statement method 
+		 * 
+		 * 
 		 */
 		public String statement() {
 		double totalAmount = 0;
@@ -39,21 +41,7 @@ public class Customer {
 			double thisAmount = 0;
 			Rental each = (Rental) rentals.nextElement();
 			//determine amounts for each line
-			switch (each.getMovie().getPriceCode()) {
-			case Movie.REGULAR:
-				thisAmount += 2;
-				if (each.getDaysRented() > 2)
-					thisAmount += (each.getDaysRented() - 2) * 1.5;
-				break;
-			case Movie.NEW_RELEASE:
-				thisAmount += each.getDaysRented() * 3;
-				break;
-			case Movie.CHILDRENS:
-				thisAmount += 1.5;
-				if (each.getDaysRented() > 3)
-					thisAmount += (each.getDaysRented() - 3) * 1.5;
-				break;
-			}
+			thisAmount = amountFor(thisAmount, each);
 			// add frequent renter points
 			frequentRenterPoints ++;
 			// add bonus for a two day new release rental
@@ -73,4 +61,22 @@ public class Customer {
 		" frequent renter points";
 		return result;
 	}
+		private double amountFor(double result, Rental aRental) {
+			switch (aRental.getMovie().getPriceCode()) {
+			case Movie.REGULAR:
+				result += 2;
+				if (aRental.getDaysRented() > 2)
+					result += (aRental.getDaysRented() - 2) * 1.5;
+				break;
+			case Movie.NEW_RELEASE:
+				result += aRental.getDaysRented() * 3;
+				break;
+			case Movie.CHILDRENS:
+				result += 1.5;
+				if (aRental.getDaysRented() > 3)
+					result += (aRental.getDaysRented() - 3) * 1.5;
+				break;
+			}
+			return result;
+		}
 }
