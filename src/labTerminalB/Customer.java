@@ -17,7 +17,7 @@ public class Customer {
 		};
 		
 		/*
-		 * TODO 4		20 Marks
+		 * TODO 4
 		 * Identify the bad smells in the statement method and refactor the code
 		 * In case you add a new method also provide specifications for new method
 		 * after refactoring all test cases must still be passed
